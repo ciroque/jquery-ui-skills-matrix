@@ -1,0 +1,26 @@
+.rtmctr {
+    border: solid 1px yellow;
+}
+
+.rtmdtl {
+    border: solid 1px orange;
+    height:44px;
+    padding:1px;
+}
+
+.rtmcat {
+    border: solid 1px red;
+    float: left;
+    height: 42px;
+    margin-right: 14px;
+    width: 42px;
+}
+
+.rtmnom {
+    border: solid 1px green;
+    display: inline-block;
+    margin-right: 4px;
+    height: 42px;
+    width: 42px;
+}
+
