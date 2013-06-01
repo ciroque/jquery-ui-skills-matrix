@@ -9,6 +9,8 @@
     /*border: solid 1px orange;*/
     height:44px;
     padding:4px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .rtmcat {

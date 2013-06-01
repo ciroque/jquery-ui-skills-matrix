@@ -3,6 +3,17 @@
 <head>
     <title></title>
 
+    <style>
+        #data {
+            display:inline-block;
+        }
+
+        #viewport {
+            float:left;
+            width: 760px;
+        }
+    </style>
+
     <link href="../src/css/jquery.ratingsMatrix.css" rel="stylesheet" type="text/css">
 
     <script language="javascript" src="../src/js/jquery-1.9.1.js"></script>
@@ -38,11 +49,82 @@
 
 </head>
 <body>
-    <div>
-        <input size="160" type="text" id="ratings" value='{"ratings" : [{"rating" : {"title": "Peter", "icon": "http://openclipart.org/image/250px/svg_to_png/177854/1367934593.png"}, "nominations": [{"name": "Paul", "icon": "http://openclipart.org/image/250px/svg_to_png/177854/1367934593.png"},{"name": "John", "icon": "http://openclipart.org/image/250px/svg_to_png/177854/1367934593.png"},{"name": "Michael", "icon": ""},{"name": "Mark", "icon": ""}]},{"rating" : {"title": "", "icon": ""}, "nominations": [{"name": "Luke", "icon": ""},{"name": "Matthew", "icon": ""},{"name": "", "icon": ""},{"name": "", "icon": ""}]},{"rating" : {"title": "", "icon": ""}, "nominations": [{"name": "", "icon": ""},{"name": "", "icon": ""}]}]}'/>
+    <div id="data">
+        <textarea rows="25" cols="120" type="text" id="ratings">
+{
+    "ratings": [
+        {
+            "rating": {
+                "title": "Peter",
+                "icon": "http://openclipart.org/image/250px/svg_to_png/177854/1367934593.png"
+            },
+            "nominations": [
+                {
+                    "name": "Paul",
+                    "icon": "http://openclipart.org/image/250px/svg_to_png/177854/1367934593.png"
+                },
+                {
+                    "name": "John",
+                    "icon": "http://openclipart.org/image/250px/svg_to_png/177854/1367934593.png"
+                },
+                {
+                    "name": "Michael",
+                    "icon": ""
+                },
+                {
+                    "name": "Mark",
+                    "icon": ""
+                }
+            ]
+        },
+        {
+            "rating": {
+                "title": "",
+                "icon": ""
+            },
+            "nominations": [
+                {
+                    "name": "Luke",
+                    "icon": ""
+                },
+                {
+                    "name": "Matthew",
+                    "icon": ""
+                },
+                {
+                    "name": "",
+                    "icon": ""
+                },
+                {
+                    "name": "",
+                    "icon": ""
+                }
+            ]
+        },
+        {
+            "rating": {
+                "title": "",
+                "icon": ""
+            },
+            "nominations": [
+                {
+                    "name": "",
+                    "icon": ""
+                },
+                {
+                    "name": "",
+                    "icon": ""
+                }
+            ]
+        }
+    ]
+}        </textarea>
         <button id="apply">Apply</button>
     </div>
 
-    <div id="ratmat"/>
+    <div id="viewport">
+        <div id="ratmat"/>
+    </div>
+
 </body>
 </html>
