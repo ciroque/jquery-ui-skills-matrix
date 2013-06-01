@@ -1,11 +1,14 @@
 .rtmctr {
-    border: solid 1px yellow;
+    /*border: solid 1px yellow;*/
+    padding-top : 8px;
+    padding-right : 8px;
+    padding-bottom : 8px;
 }
 
 .rtmdtl {
-    border: solid 1px orange;
+    /*border: solid 1px orange;*/
     height:44px;
-    padding:1px;
+    padding:4px;
 }
 
 .rtmcat {
@@ -24,3 +27,24 @@
     width: 42px;
 }
 
+.hvrtile {
+    background-color: white;
+    border: solid 1px black;
+    display: none;
+    height: 120px;
+    opacity: 40;
+    overflow: hidden;
+    position: absolute;
+    width: 220px;
+}
+
+.hvrtile div {
+    background-color: #CC8899;
+    color: white;
+    font-weight: bolder;
+}
+
+.hvrtile img {
+    height: 64px;
+    width: 64px;
+}

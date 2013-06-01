@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <link href="../src/css/jquery.ratingsMatrix.css" rel="stylesheet" type="text/css">
+
+    <script language="javascript" src="../src/js/jquery-1.9.1.js"></script>
+    <script language="javascript" src="../src/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script language="javascript" src="../src/js/jquery.ratingsMatrix.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#ratmat").ratingsMatrix(
+                    {
+                        nomclick: function(event, data) {
+                            console.log("nomclick => " + JSON.stringify(data));
+                        },
+
+                        nommouseenter: function(event, data) {
+                            console.log("nommouseenter -> " + JSON.stringify(data));
+                        },
+
+                        nommouseleave: function(event, data) {
+                            console.log("nommouseleave -> " + JSON.stringify(data));
+                        }
+                    }
+
+            );
+
+            $("#apply").click(function() {
+               $("#ratmat").ratingsMatrix("setRatings", $("#ratings").val());
+            });
+
+            $("#apply").click();
+        });
+    </script>
+
+</head>
+<body>
+    <div>
+        <input size="160" type="text" id="ratings" value='{"ratings" : [{"rating" : {"title": "Peter", "icon": "http://openclipart.org/image/250px/svg_to_png/177854/1367934593.png"}, "nominations": [{"name": "Paul", "icon": "http://openclipart.org/image/250px/svg_to_png/177854/1367934593.png"},{"name": "John", "icon": "http://openclipart.org/image/250px/svg_to_png/177854/1367934593.png"},{"name": "Michael", "icon": ""},{"name": "Mark", "icon": ""}]},{"rating" : {"title": "", "icon": ""}, "nominations": [{"name": "Luke", "icon": ""},{"name": "Matthew", "icon": ""},{"name": "", "icon": ""},{"name": "", "icon": ""}]},{"rating" : {"title": "", "icon": ""}, "nominations": [{"name": "", "icon": ""},{"name": "", "icon": ""}]}]}'/>
+        <button id="apply">Apply</button>
+    </div>
+
+    <div id="ratmat"/>
+</body>
+</html>
