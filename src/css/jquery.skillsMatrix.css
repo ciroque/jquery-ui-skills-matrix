@@ -1,11 +1,11 @@
-.rtmctr {
+.skmctr {
     /*border: solid 1px yellow;*/
     padding-top : 8px;
     padding-right : 8px;
     padding-bottom : 8px;
 }
 
-.rtmdtl {
+.skmdtl {
     /*border: solid 1px orange;*/
     height:44px;
     padding:4px;
@@ -13,7 +13,7 @@
     overflow-y: hidden;
 }
 
-.rtmcat {
+.skmcat {
     border: solid 1px red;
     float: left;
     height: 42px;
@@ -21,7 +21,7 @@
     width: 42px;
 }
 
-.rtmnom {
+.skmnom {
     border: solid 1px green;
     display: inline-block;
     margin-right: 4px;

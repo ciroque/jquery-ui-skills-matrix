@@ -1,6 +1,6 @@
 (function ($) {
     $.widget(
-        "ciroque.ratingsMatrix",
+        "ciroque.skillsMatrix",
         {
 
             options: {
@@ -11,10 +11,12 @@
             },
 
             _create: function () {
-                this.element.addClass("rtmctr");
+                this.element.addClass("skmctr");
                 var name = "ciro_rm_hvr_tile";
                 var hvrtile = $("<div>", { id: name, name: name }).addClass(this.options.hovertileclass);
-                hvrtile.html("<b>Why Hello There</b>").appendTo("body");
+                hvrtile
+                    .html("<b>Why Hello There</b>")
+                    .appendTo("body");
             },
 
             _init: function () {
@@ -63,15 +65,15 @@
                 $.each(
                     defjson.ratings,
                     function (idx, rating) {
-                        var dtl = $("<div>").addClass("rtmdtl");
-                        var cat = $("<div>").addClass("rtmcat");
+                        var dtl = $("<div>").addClass("skmdtl");
+                        var cat = $("<div>").addClass("skmcat");
                         dtl.append(cat);
 
                         $.each(
                             rating.nominations,
                             function (si, nomination) {
                                 var name = "nom" + si;
-                                var nom = $("<div>", { name: name, id: name }).addClass("rtmnom");
+                                var nom = $("<div>", { name: name, id: name }).addClass("skmnom");
 
                                 nom.bind(
                                     "mouseenter." + name,
@@ -100,7 +102,6 @@
                                 nom.bind(
                                     "click." + name,
                                     function(event) {
-
                                         self._evtHandlerCommon($(this), event, nomination, function(evtArgs) {
                                             self._trigger("nomclick", event, evtArgs);
                                         });

@@ -14,28 +14,22 @@
         }
     </style>
 
-    <link href="../src/css/jquery.ratingsMatrix.css" rel="stylesheet" type="text/css">
+    <link href="../src/css/jquery.skillsMatrix.css" rel="stylesheet" type="text/css">
 
     <script language="javascript" src="../src/js/jquery-1.9.1.js"></script>
     <script language="javascript" src="../src/js/jquery-ui-1.10.3.custom.min.js"></script>
-    <script language="javascript" src="../src/js/jquery.ratingsMatrix.js"></script>
+    <script language="javascript" src="../src/js/jquery.skillsMatrix.js"></script>
 
     <script>
         $(document).ready(function() {
-            $("#ratmat").ratingsMatrix(
+            $("#ratmat").skillsMatrix(
                     {
                         nomclick: function(event, data) {
-                            // data.jqo.html("<p>sure thing...</p>")
-                            
+                            data.jqo.html("<p>sure thing...</p>")
                         },
 
-//                        nommouseenter: function(event, data) {
-//
-//                            data.jqo.show();
-//
-//                            console.log("nommouseenter -> " + data);
-//                            return false;
-//                        },
+                        nommouseenter: function(event, data) {
+                        },
 
                         nommouseleave: function(event, data) {
                         }
@@ -44,7 +38,7 @@
             );
 
             $("#apply").click(function() {
-               $("#ratmat").ratingsMatrix("setRatings", $("#ratings").val());
+               $("#ratmat").skillsMatrix("setRatings", $("#ratings").val());
             });
 
             $("#apply").click();
