@@ -25,15 +25,19 @@
             $("#ratmat").ratingsMatrix(
                     {
                         nomclick: function(event, data) {
-                            console.log("nomclick => " + JSON.stringify(data));
+                            // data.jqo.html("<p>sure thing...</p>")
+                            
                         },
 
-                        nommouseenter: function(event, data) {
-                            console.log("nommouseenter -> " + JSON.stringify(data));
-                        },
+//                        nommouseenter: function(event, data) {
+//
+//                            data.jqo.show();
+//
+//                            console.log("nommouseenter -> " + data);
+//                            return false;
+//                        },
 
                         nommouseleave: function(event, data) {
-                            console.log("nommouseleave -> " + JSON.stringify(data));
                         }
                     }
 

@@ -34,6 +34,20 @@
             _destroy: function () {
             },
 
+            _evtHandlerCommon: function(self, evt, nom, trigger) {
+                var pos = self.offset();
+                var size = self.outerWidth() + pos.left;
+
+                var evtArgs = {
+                    pos: pos
+                    ,size: size
+                    ,jqo: $("#ciro_rm_hvr_tile")
+                    ,nomination: nom
+                }
+
+                trigger(evtArgs);
+            },
+
             setRatings: function (def) {
 
                 this.element.empty();
@@ -62,17 +76,16 @@
                                 nom.bind(
                                     "mouseenter." + name,
                                     function(event) {
-                                        var pos = $(this).offset();
-                                        var size = $(this).outerWidth() + pos.left;
 
-                                        console.log(pos + "::" + size);
+                                        self._evtHandlerCommon($(this), event, nomination, function(evtArgs) {
 
-                                        $("#ciro_rm_hvr_tile")
-                                            .css({ top: pos.top + "px", left: (size + 2) + "px" })
-                                            .html("<div>" + nomination.name + "</div><img src=\"" + nomination.icon + "\"/>")
-                                            .show();
-
-                                        self._trigger("nommouseenter", event, nomination);
+                                            if(self._trigger("nommouseenter", event, evtArgs)) {
+                                                $("#ciro_rm_hvr_tile")
+                                                    .css({ top: evtArgs.pos.top + "px", left: (evtArgs.size + 2) + "px" })
+                                                    .html("<div>" + nomination.name + "</div><img src=\"" + nomination.icon + "\"/>")
+                                                    .show();
+                                            }
+                                        });
                                     }
                                 );
 
@@ -87,7 +100,10 @@
                                 nom.bind(
                                     "click." + name,
                                     function(event) {
-                                        self._trigger("nomclick", event, nomination);
+
+                                        self._evtHandlerCommon($(this), event, nomination, function(evtArgs) {
+                                            self._trigger("nomclick", event, evtArgs);
+                                        });
                                     }
                                 );
 
